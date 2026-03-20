@@ -2,7 +2,7 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Cutscene2 : MonoBehaviour
+public class Cutscene : MonoBehaviour
 {
     private int timesClicked = 0;
     public GameObject Text1;
@@ -17,7 +17,9 @@ public class Cutscene2 : MonoBehaviour
             Text2.SetActive(true);
         } else if  (timesClicked == 2)
         {
-            SceneManager.LoadScene("Level2");
+            int sceneNumber = SceneManager.GetActiveScene().buildIndex;
+            
+            SceneManager.LoadScene(sceneNumber + 1);
         }
     }
 }
